@@ -1,5 +1,4 @@
 
-import React from "react";
 import Layout from "@/components/Layout";
 import PropertySlider from "@/components/PropertySlider";
 import ServiceCard from "@/components/ServiceCard";
@@ -10,31 +9,31 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const propertyImages = [
     {
-      url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      url: "/propertyimages/VILLAS.jpg",
       title: "Luxury Villas With Premium Amenities",
       description:
         "Discover our exclusive collection of high-end properties in prime locations.",
     },
     {
-      url: "https://images.unsplash.com/photo-1600047509358-9dc75507daeb",
+      url: "/propertyimages/PLOTS.jpg",
       title: "Prime Plot Locations",
       description:
         "Secure your ideal plot in rapidly developing neighborhoods with excellent connectivity.",
     },
     {
-      url: "https://images.unsplash.com/photo-1600585154526-990dced4db0d",
+      url: "/propertyimages/APARTMENTS.jpg",
       title: "Modern Apartment Complexes",
       description:
         "Contemporary living spaces with state-of-the-art facilities and security.",
     },
     {
-      url: "https://images.unsplash.com/photo-1600607686527-6fb886090705",
+      url: "/propertyimages/LANDS.jpg",
       title: "Open Land Investment Opportunities",
       description:
         "Strategic land parcels perfect for commercial development and long-term investment.",
     },
     {
-      url: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b",
+      url: "/propertyimages/FARMS.jpg",
       title: "Resort-Style Living",
       description:
         "Enjoy resort amenities at home with our selection of premium properties.",

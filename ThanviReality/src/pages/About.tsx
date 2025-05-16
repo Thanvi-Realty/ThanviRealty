@@ -1,5 +1,3 @@
-
-import React from "react";
 import Layout from "@/components/Layout";
 import ProcessStep from "@/components/ProcessStep";
 import AmenityCard from "@/components/AmenityCard";

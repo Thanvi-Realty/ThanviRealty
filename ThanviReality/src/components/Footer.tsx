@@ -20,11 +20,11 @@ const Footer = () => {
           </h3>
           <p className="text-gray-300 max-w-xs">
             Premium real estate solutions for plots, villas, apartments, and open lands. 
-            Building your dream homes since 2009 across South India.
+            Building your dream homes across South India.
           </p>
           <div className="flex space-x-4">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/thanvibuildtechventures/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-realEstate-secondary transition-colors duration-300"
@@ -33,7 +33,7 @@ const Footer = () => {
               <Facebook size={20} />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/thanvi.buildtech/#"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-realEstate-secondary transition-colors duration-300"
@@ -108,17 +108,32 @@ const Footer = () => {
         <div className="space-y-4">
           <h4 className="font-montserrat font-semibold text-lg">Contact Us</h4>
           <div className="space-y-3">
-            <div className="flex items-center">
+            <div className="flex items-center ">
               <Phone size={18} className="mr-2 text-realEstate-secondary" />
-              <span className="text-gray-300">+91 9876543210</span>
+              <div className="flex flex-col">
+    <a href="tel:+917411091999" className="text-gray-300 hover:underline">
+      +91 7411091999
+    </a>
+    <a href="tel:+917676729548" className="text-gray-300 hover:underline">
+      +91 7676729548
+    </a>
+  </div>
             </div>
             <div className="flex items-center">
               <Mail size={18} className="mr-2 text-realEstate-secondary" />
-              <span className="text-gray-300">info@thanvirealty.com</span>
+   <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=thanvirealty@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-gray-300 hover:underline"
+  >
+    thanvirealty@gmail.com
+  </a>
             </div>
             <p className="text-gray-300">
-              123 Thanvi Realty Avenue,<br />
-              Bangalore, Karnataka 560001
+              #32, 2nd floor MIG2B, 6th Cross,<br />
+              KHB Colony, Gandhinagar International, Airport Road, <br />
+              Yelahanka, Bengaluru, Karnataka 560064
             </p>
           </div>
         </div>

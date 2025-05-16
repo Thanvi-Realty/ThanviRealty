@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -37,7 +36,7 @@ const PropertySlider = ({
   }, [goToNext, autoplayInterval]);
 
   return (
-    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
+    <div className="relative w-full h-[60vh] md:h-[89vh] overflow-hidden">
       {/* Slides */}
       {images.map((image, index) => (
         <div
@@ -47,14 +46,16 @@ const PropertySlider = ({
             index === currentIndex ? "opacity-100" : "opacity-0"
           )}
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${image.url})` }}
-          >
-            {/* Gradient overlay */}
+          <div className="absolute inset-0">
+            <img
+              src={image.url}
+              alt={image.title}
+              className="w-full h-full object-fill"
+            />
+            {/* Optional: Gradient overlay on top of image */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
           </div>
-          
+
           {/* Text overlay */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8">
             <div className="max-w-3xl text-center">

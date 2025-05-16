@@ -50,9 +50,7 @@ const Navbar = ({ activeSection = "home", onNavClick }: NavbarProps) => {
     >
       <div className="container flex justify-between items-center">
         <a href="#home" onClick={() => handleNavClick('home')} className="flex items-center">
-          <div className="text-2xl font-bold text-realEstate-primary">
-            <span className="text-realEstate-secondary">THANVI</span> REALTY
-          </div>
+          <img src="/THANVI REALTY LOGO.png" alt="Thanvi realty" className="h-10 w-auto"/>
         </a>
 
         {/* Mobile Menu Button */}

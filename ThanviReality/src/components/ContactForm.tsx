@@ -1,10 +1,10 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Facebook, Instagram, Phone } from "lucide-react";
+import { Facebook, Instagram, Phone, Mail } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 interface FormData {
   name: string;
@@ -40,7 +40,7 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    
+
     // Clear error when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
@@ -84,7 +84,7 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
     return isValid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -93,8 +93,14 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      await emailjs.send(
+        "YOUR_SERVICE_ID", // From EmailJS dashboard
+        "YOUR_TEMPLATE_ID", // Your template ID
+        formData as unknown as Record<string, unknown>,
+        "YOUR_PUBLIC_KEY" // From EmailJS
+      );
+
       // Reset form
       setFormData({
         name: "",
@@ -102,24 +108,31 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
         phone: "",
         message: "",
       });
+
+      // Show success
+      toast.success("Message sent successfully!", { duration: 5000 });
+    } catch (error) {
+      toast.error("Failed to send. Please try again.");
+    } finally {
       setIsSubmitting(false);
-      
-      // Show success notification
-      toast.success("Your message has been sent! We'll contact you soon.", {
-        duration: 5000,
-      });
-    }, 1500);
+    }
   };
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-16 pt-0">
       <div className="container">
-        <h2 className="section-heading text-center">Contact Us</h2>
-        <p className="section-subheading text-center">
+        {/* <h2 className="section-heading text-center">Contact Us</h2> */}
+        <h2 className="section-subheading text-center ">
           Get in touch with our expert team today
-        </p>
+        </h2>
 
-        <div className={`mt-12 ${displayMap ? "grid grid-cols-1 lg:grid-cols-2 gap-8 items-start" : ""}`}>
+        <div
+          className={`mt-12 ${
+            displayMap
+              ? "grid grid-cols-1 lg:grid-cols-2 gap-8 items-start"
+              : ""
+          }`}
+        >
           {displayMap && (
             <div className="rounded-lg overflow-hidden shadow-lg h-[400px] md:h-[500px]">
               <iframe
@@ -135,13 +148,16 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
           <div className="bg-white rounded-lg shadow-lg p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
                   Your Name
                 </label>
                 <Input
                   id="name"
                   name="name"
-                  placeholder="John Doe"
+                  placeholder="Enter your name"
                   value={formData.name}
                   onChange={handleChange}
                   className={errors.name ? "border-red-500" : ""}
@@ -152,14 +168,17 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
                   Email Address
                 </label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="johndoe@example.com"
+                  placeholder="Enter your Email"
                   value={formData.email}
                   onChange={handleChange}
                   className={errors.email ? "border-red-500" : ""}
@@ -170,13 +189,16 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
                   Phone Number
                 </label>
                 <Input
                   id="phone"
                   name="phone"
-                  placeholder="e.g., +1 234 567 8900"
+                  placeholder="e.g., +91 9988776655"
                   value={formData.phone}
                   onChange={handleChange}
                   className={errors.phone ? "border-red-500" : ""}
@@ -187,7 +209,10 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
                   Your Message
                 </label>
                 <Textarea
@@ -196,7 +221,9 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
                   placeholder="How can we help you today?"
                   value={formData.message}
                   onChange={handleChange}
-                  className={`min-h-[120px] ${errors.message ? "border-red-500" : ""}`}
+                  className={`min-h-[120px] ${
+                    errors.message ? "border-red-500" : ""
+                  }`}
                 />
                 {errors.message && (
                   <p className="text-red-500 text-sm mt-1">{errors.message}</p>
@@ -214,28 +241,54 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
 
             <div className="mt-8 pt-6 border-t border-gray-200">
               <div className="flex flex-col space-y-4">
-                <h4 className="font-montserrat font-bold text-lg">Contact Information</h4>
+                <h4 className="font-montserrat font-bold text-lg">
+                  Contact Information
+                </h4>
                 <div className="flex items-center">
                   <Phone size={18} className="mr-2 text-realEstate-primary" />
-                  <span>[REPLACE WITH ACTUAL PHONE]</span>
+                  <div className="flex flex-col">
+                    <a
+                      href="tel:+917411091999"
+                      className="text-black-300 hover:underline"
+                    >
+                      +91 7411091999
+                    </a>
+                    <a
+                      href="tel:+917676729548"
+                      className="text-black-300 hover:underline"
+                    >
+                      +91 7676729548
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <Mail size={18} className="mr-2 text-realEstate-secondary " />
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=thanvirealty@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black-300 hover:underline"
+                    aria-label="Facebook"
+                  >
+                    thanvirealty@gmail.com
+                  </a>
                 </div>
                 <p className="text-gray-700">
-                  [REPLACE WITH ACTUAL ADDRESS]
+                  #32, 2nd floor MIG2B, 6th Cross,KHB Colony,
                   <br />
-                  123 Real Estate Avenue
-                  <br />
-                  City, State 12345
+                  Gandhinagar International, Airport Road, <br />
+                  Yelahanka, Bengaluru, Karnataka 560064
                 </p>
                 <div className="flex space-x-4 pt-2">
                   <a
-                    href="#"
+                    href="https://www.facebook.com/thanvibuildtechventures/"
                     className="text-realEstate-primary hover:text-realEstate-secondary transition-colors duration-300"
                     aria-label="Facebook"
                   >
                     <Facebook size={20} />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/thanvi.buildtech/#"
                     className="text-realEstate-primary hover:text-realEstate-secondary transition-colors duration-300"
                     aria-label="Instagram"
                   >
