@@ -95,10 +95,10 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
 
     try {
       await emailjs.send(
-        "YOUR_SERVICE_ID", // From EmailJS dashboard
-        "YOUR_TEMPLATE_ID", // Your template ID
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
         formData as unknown as Record<string, unknown>,
-        "YOUR_PUBLIC_KEY" // From EmailJS
+        "YOUR_PUBLIC_KEY"
       );
 
       // Reset form
@@ -119,22 +119,21 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
   };
 
   return (
-    <section className="bg-white py-16 pt-0">
-      <div className="container">
-        {/* <h2 className="section-heading text-center">Contact Us</h2> */}
-        <h2 className="section-subheading text-center ">
+    <section className="bg-white py-4 md:py-8 pt-0">
+      <div className="container px-3 sm:px-4">
+        <h1 className="section-subheading text-center text-lg md:text-xl mb-4 md:mb-6">
           Get in touch with our expert team today
-        </h2>
+        </h1>
 
         <div
-          className={`mt-12 ${
+          className={`mt-8 md:mt-12 ${
             displayMap
-              ? "grid grid-cols-1 lg:grid-cols-2 gap-8 items-start"
+              ? "grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-start"
               : ""
           }`}
         >
           {displayMap && (
-            <div className="rounded-lg overflow-hidden shadow-lg h-[400px] md:h-[500px]">
+            <div className="rounded-lg overflow-hidden shadow-lg h-[280px] sm:h-[320px] md:h-[380px] lg:h-[450px] order-1 lg:order-none">
               <iframe
                 title="Google Map Location"
                 className="w-full h-full border-0"
@@ -145,8 +144,8 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
             </div>
           )}
 
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="w-full bg-white rounded-lg shadow-lg p-3 sm:p-5 md:p-6 order-2 lg:order-none">
+            <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
               <div>
                 <label
                   htmlFor="name"
@@ -163,7 +162,7 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
                   className={errors.name ? "border-red-500" : ""}
                 />
                 {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.name}</p>
                 )}
               </div>
 
@@ -184,7 +183,7 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
                   className={errors.email ? "border-red-500" : ""}
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.email}</p>
                 )}
               </div>
 
@@ -204,7 +203,7 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
                   className={errors.phone ? "border-red-500" : ""}
                 />
                 {errors.phone && (
-                  <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.phone}</p>
                 )}
               </div>
 
@@ -221,78 +220,78 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
                   placeholder="How can we help you today?"
                   value={formData.message}
                   onChange={handleChange}
-                  className={`min-h-[120px] ${
+                  className={`min-h-[100px] md:min-h-[120px] ${
                     errors.message ? "border-red-500" : ""
                   }`}
                 />
                 {errors.message && (
-                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.message}</p>
                 )}
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-realEstate-cta hover:bg-realEstate-cta/90"
+                className="w-full bg-realEstate-cta hover:bg-realEstate-cta/90 py-2 md:py-2.5"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
 
-            <div className="mt-8 pt-6 border-t border-gray-200">
-              <div className="flex flex-col space-y-4">
-                <h4 className="font-montserrat font-bold text-lg">
+            <div className="mt-4 md:mt-6 pt-3 md:pt-4 border-t border-gray-200">
+              <div className="flex flex-col space-y-3 md:space-y-4">
+                <h4 className="font-montserrat font-bold text-base md:text-lg">
                   Contact Information
                 </h4>
-                <div className="flex items-center">
-                  <Phone size={18} className="mr-2 text-realEstate-primary" />
+                <div className="flex items-start">
+                  <Phone size={16} className="mt-0.5 mr-2 text-realEstate-primary" />
                   <div className="flex flex-col">
                     <a
                       href="tel:+917411091999"
-                      className="text-black-300 hover:underline"
+                      className="text-black-300 hover:underline text-sm md:text-base"
                     >
                       +91 7411091999
                     </a>
                     <a
                       href="tel:+917676729548"
-                      className="text-black-300 hover:underline"
+                      className="text-black-300 hover:underline text-sm md:text-base"
                     >
                       +91 7676729548
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <Mail size={18} className="mr-2 text-realEstate-secondary " />
+                <div className="flex items-start">
+                  <Mail size={16} className="mt-0.5 mr-2 text-realEstate-secondary" />
                   <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=thanvirealty@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-black-300 hover:underline"
-                    aria-label="Facebook"
+                    className="text-black-300 hover:underline text-sm md:text-base"
+                    aria-label="Email"
                   >
                     thanvirealty@gmail.com
                   </a>
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-sm md:text-base">
                   #32, 2nd floor MIG2B, 6th Cross,KHB Colony,
                   <br />
                   Gandhinagar International, Airport Road, <br />
                   Yelahanka, Bengaluru, Karnataka 560064
                 </p>
-                <div className="flex space-x-4 pt-2">
+                <div className="flex space-x-3 pt-1 md:pt-2">
                   <a
                     href="https://www.facebook.com/thanvibuildtechventures/"
                     className="text-realEstate-primary hover:text-realEstate-secondary transition-colors duration-300"
                     aria-label="Facebook"
                   >
-                    <Facebook size={20} />
+                    <Facebook size={18} className="w-5 h-5" />
                   </a>
                   <a
                     href="https://www.instagram.com/thanvi.buildtech/#"
                     className="text-realEstate-primary hover:text-realEstate-secondary transition-colors duration-300"
                     aria-label="Instagram"
                   >
-                    <Instagram size={20} />
+                    <Instagram size={18} className="w-5 h-5" />
                   </a>
                 </div>
               </div>
