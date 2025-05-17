@@ -50,7 +50,7 @@ const PropertySlider = ({
             <img
               src={image.url}
               alt={image.title}
-              className="w-full h-full object-fill"
+              className="w-full h-full object-cover"
             />
             {/* Optional: Gradient overlay on top of image */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>

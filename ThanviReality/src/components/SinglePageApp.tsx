@@ -26,12 +26,12 @@ import BankLogosCarousel from "./BankLogosCarousel";
 // Images for property slider
 const sliderImages = [
   {
-    url: "/propertyimages/PLOTS.png",
+    url: "/propertyimages/PLOT.jpg",
     title: "Premium Plots",
     description: "Exclusive plots in prime locations ready for your dream home",
   },
   {
-    url: "/propertyimages/VILLAS.png",
+    url: "/propertyimages/VILLA.jpg",
     title: "Luxury Villas",
     description: "Meticulously designed villas with premium amenities",
   },
@@ -41,12 +41,12 @@ const sliderImages = [
     description: "Contemporary living spaces in strategic locations",
   },
   {
-    url: "/propertyimages/LANDS.png",
+    url: "/propertyimages/LAND.jpg",
     title: "Lands for Investment",
     description: "Ideal locations for business growth and development",
   },
   {
-    url: "/propertyimages/FARMS.jpg",
+    url: "/propertyimages/FARM-1.jpg",
     title: "Farms",
     description: "Peaceful retreats away from the city bustle",
   },
