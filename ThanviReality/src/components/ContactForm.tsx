@@ -95,10 +95,10 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
 
     try {
       await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_dw3imiw",
+        "template_xtgznnn",
         formData as unknown as Record<string, unknown>,
-        "YOUR_PUBLIC_KEY"
+        "TKoQRr83GCsBZMmj7"
       );
 
       // Reset form
@@ -295,7 +295,7 @@ const ContactForm = ({ displayMap = true }: ContactFormProps) => {
                   </a>
                 </div>
               </div>
-            </div>
+            </div> 
           </div>
         </div>
       </div>
