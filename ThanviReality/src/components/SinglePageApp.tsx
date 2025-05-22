@@ -238,16 +238,16 @@ const SinglePageApp: React.FC = () => {
 
           <div className="bg-white p-8 rounded-lg shadow-lg mb-16">
             <p className="text-gray-700 leading-relaxed">
-              Thanvi Realty is a leading name in real estate in Bangalore,
-              Hyderabad and Vizag specializing in premium villa plots, luxury
-              residential layouts, and commercial properties. With over 15 years
-              of experience, we focus on quality construction, modern amenities,
-              and strategic locations near IT hubs and key landmarks. Our
-              projects offer excellent investment potential and a superior
-              lifestyle, featuring gated communities, 24/7 security, and green
-              spaces. We are committed to transparent transactions and customer
-              satisfaction, making your dream home a reality. Choose Thanvi
-              Realty for trusted real estate solutions across South India.
+              Thanvi Realty is a venture of Thanvi Buildtech and a trusted name
+              in South India's real estate sector, operating across Bangalore,
+              Hyderabad, and Vizag. We specialize in premium villa plots, luxury
+              residential layouts, and commercial developments. Backed by 15+
+              years of experience, we focus on delivering high-quality
+              construction, modern amenities, and properties in prime locations
+              near IT hubs and major landmarks. Our Gated Communities feature
+              24/7 security, green open spaces, and strong investment potential.
+              With a commitment to transparency and customer satisfaction,
+              Thanvi Realty turns your dream home into reality.
             </p>
           </div>
 
