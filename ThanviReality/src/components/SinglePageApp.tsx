@@ -50,6 +50,11 @@ const sliderImages = [
     title: "Farms",
     description: "Peaceful retreats away from the city bustle",
   },
+  {
+    url: "/propertyimages/HYDRABAD.png",
+    title: "Hyderabad Exclusive Project",
+    description: "Discover Premium, Exclusive Real Estate Projects in the Heart of Hyderabad.",
+  },
 ];
 
 // Services data
@@ -61,16 +66,16 @@ const services = [
       "Thanvi Realty offers professionally managed plot development services, turning raw land into fully planned, ready-to-construct plots. With a focus on quality infrastructure, legal compliance, and thoughtful layout design, we ensure each plot is equipped with essential amenities and is investment-ready.",
   },
   {
-    title: "Site Visit Assistance",
-    image: "/ourservices/SITE VISIT ASSISTANCE NEW.jpg",
+    title: "Land Acquisition",
+    image: "/ourservices/LAND ACQUISITION NEW.jpg",
     description:
-      "Thanvi Realty provides end-to-end site visit assistance to help you explore properties with ease and confidence. Our team coordinates your visit, offers guided tours of the project, and answers all your queries on-site. We ensure a smooth and informative experience, helping you make well-informed decisions.",
+      "Thanvi Realty offers expert land acquisition services to help clients identify, evaluate, and secure prime land parcels for residential, commercial, or investment purposes. We handle every step - from legal due diligence and negotiations to documentation - ensuring a transparent and hassle-free process. Our in-depth market knowledge allows us to acquire strategically located lands with strong growth potential.",
   },
   {
-    title: "Legal Verification",
-    image: "/ourservices/LEGAL VERIFICATION NEW.jpg",
+    title: "Construction",
+    image: "/ourservices/CONSTRUCTION NEW 2.jpg",
     description:
-      "Thanvi Realty ensures every property undergoes thorough legal verification before purchase. Our expert team checks ownership documents, approvals, RERA registration, and land titles to give you complete peace of mind. We prioritize transparency and protect your investment with verified, hassle-free transactions.",
+      "Thanvi Realty provides end-to-end construction services, transforming your vision into reality with structural integrity and aesthetic excellence. We specialize in building residential and commercial spaces with a focus on quality materials, modern techniques, and timely delivery. Our experienced team ensures that every project meets high standards of safety, functionality, and durability, making your investment future-ready.",
   },
   {
     title: "Investment Guidance",
@@ -370,7 +375,7 @@ const SinglePageApp: React.FC = () => {
       >
         <div className="container ">
           {/* Header Section with Shady Background */}
-          <div className="w-full mx-auto text-center mb-12 p-8 bg-emerald-100 shadow-md rounded-lime">
+          <div className="w-full mx-auto text-center mb-12 p-8  bg-emerald-100 shadow-md rounded-lime">
             <h2 className="text-3xl md:text-4xl font-bold text-realEstate-primary mb-3">
               Why Clients Trust Us
             </h2>

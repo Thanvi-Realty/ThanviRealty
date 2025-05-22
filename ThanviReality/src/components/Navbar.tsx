@@ -48,9 +48,9 @@ const Navbar = ({ activeSection = "home", onNavClick }: NavbarProps) => {
           : "bg-white/80 backdrop-blur-sm py-4"
       )}
     >
-      <div className="container flex justify-between items-center">
+      <div className="w-full flex justify-between items-center px-2 py-0">
         <a href="#home" onClick={() => handleNavClick('home')} className="flex items-center">
-          <img src="/THANVI REALTY LOGO.png" alt="Thanvi realty" className="h-10 w-auto"/>
+          <img src="/THANVI REALTY LOGO.png" alt="Thanvi realty" className="h-16 w-auto px-4 py-1"/>
         </a>
 
         {/* Mobile Menu Button */}

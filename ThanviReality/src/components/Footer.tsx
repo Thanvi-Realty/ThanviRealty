@@ -99,8 +99,8 @@ const Footer = () => {
           <h4 className="font-montserrat font-semibold text-lg">Our Services</h4>
           <ul className="space-y-2">
             <li className="text-gray-300">Plot Development</li>
-            <li className="text-gray-300">Site Visit Assistance</li>
-            <li className="text-gray-300">Legal Verification</li>
+            <li className="text-gray-300">Land Acquisition</li>
+            <li className="text-gray-300">Construction</li>
             <li className="text-gray-300">Investment Guidance</li>
           </ul>
         </div>
