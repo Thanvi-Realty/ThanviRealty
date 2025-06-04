@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import SinglePageApp from "./components/SinglePageApp";
 import React from "react"; 
-
+import ErrorPage from "./pages/ErrorPage";
 // Create the client outside of the component
 const queryClient = new QueryClient();
 
@@ -17,7 +17,8 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
-            <SinglePageApp />
+            {/* <SinglePageApp /> */}
+            <ErrorPage />
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
