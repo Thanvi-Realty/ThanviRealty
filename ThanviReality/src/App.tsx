@@ -17,8 +17,8 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
-            {/* <SinglePageApp /> */}
-            <ErrorPage />
+            <SinglePageApp />
+            {/* <ErrorPage /> */}
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>

@@ -143,6 +143,7 @@ const Footer = () => {
         <p className="text-center text-gray-400">
           © {currentYear} Thanvi Realty. All rights reserved.
         </p>
+        <p className="text-center text-gray-400 text-sm">Developed by <span className="text-realEstate-secondary font-bold">Joel J</span></p>
       </div>
     </footer>
   );
