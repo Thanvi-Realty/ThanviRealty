@@ -200,7 +200,7 @@ const SinglePageApp: React.FC = () => {
         <PropertySlider images={sliderImages} />
         <div className="container py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-realEstate-primary mb-6">
-            Your Trusted Path to Prime Properties
+            Your Trusted Path to Prime Properties testing
           </h1>
           <p className="text-xl mb-8 text-gray-700 max-w-3xl mx-auto">
             Discover exceptional real estate opportunities in Bangalore,
